@@ -1,0 +1,6 @@
+function Q = randomConfigurations(lowerBound,upperBound,numberOfConfigurations)
+Q = (repmat(upperBound-lowerBound,[1,numberOfConfigurations]).*...
+    rand(7*numberOfConfigurations,1)')+...
+    repmat(lowerBound,[1,numberOfConfigurations]);
+end
+

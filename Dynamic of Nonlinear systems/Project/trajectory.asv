@@ -1,0 +1,18 @@
+function x = trajectory(p,robot)
+% this function creates the trajectory for 3 DOF 2D manipulator with VSA
+
+
+%ponts generation for each trajectory segment
+k=0; % the current time frame
+for i=1:size(p,1)
+    transV = p(i+1)-p(i);
+    n = norm(transV)/robot.VCart*robot.Freq;
+    % n is the number of samples for this line tralectory
+    temp = 0:1/n:1;
+    x(k+1:k+n,:) = p(i)+transV*;
+    
+    k = k + n;
+end
+
+
+end

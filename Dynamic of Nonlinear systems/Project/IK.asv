@@ -1,0 +1,17 @@
+function Q = IK(X,robot)
+    for i=1:size(X,1)
+        xx = X(i,1:2);
+        theta = X(i,3);
+        R = [cos(theta) -sin(theta); sin(theta) cos(theta)];
+        p2 = xx-robot.L(3,:)*R;
+        L1 = norm(robot.L(1,:));
+        L2 = norm(robot.L(2,:));
+        d = norm(p2);
+        q2 = pi - acos(d^ - L1^2 + L2^2)/(-2*L1*L2));
+        %minus corresponds to elbow down conf
+        q1 = atan2(p2(2),p2(1)) - acos((norm(p2)^2+L1^2-L2^2)/(2*norm(p2)*L1));
+        
+        
+        Q(i,1:3) = [q1 q2 q3];
+    end
+end

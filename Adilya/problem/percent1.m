@@ -1,0 +1,22 @@
+function y=percent1(x)
+A1=load('percent1.dat');
+T1=A1(:,1);
+Chi1=A1(:,2);
+% A2=load('percent5.dat');
+% T2=A2(:,1);
+% Chi2=A2(:,2);
+% A3=load('percent20.dat');
+% T3=A3(:,1);
+% Chi3=A3(:,2);
+% A4=load('percent30.dat');
+% T4=A4(:,1);
+% Chi4=A4(:,2);
+z1=(x(1)+x(2)./(T1-x(3)));
+% z2=(x2(1)+x(2)./(T1-x(3)));
+% z3=(x3(1)+x(2)./(T1-x(3)));
+% z4=(x4(1)+x(2)./(T1-x(3)));
+y=sum(abs((z1-Chi1)));
+% y2=sum(abs((z2-Chi1)));
+% y3=sum(abs((z3-Chi1)));
+% y4=sum(abs((z4-Chi1)));
+plot(T1,Chi1,'.g',T1,z1,'r');
